@@ -69,7 +69,6 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
           
       - name: "Set tag & labels for ${{ github.ref }}"
-        if: github.event_name != 'pull_request'
         run: |
           if [ "$GITHUB_REF" == "refs/heads/master" ]; then
           echo "DOCKER_TAG=latest" >> $GITHUB_ENV
